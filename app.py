@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import openpyxl
 st.set_page_config(layout="wide")
 # Function to get unique values from a column after splitting by comma
 def get_unique_values_from_column(df_column):
