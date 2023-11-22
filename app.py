@@ -5,7 +5,7 @@ st.set_page_config(layout="wide")
 col1, col2 = st.columns([1, 3])
 
 with col1:
-    logo_path = 'Logo-w.png'  # Replace with the path to your logo file
+    logo_path = 'Logo-w(1).png'  # Replace with the path to your logo file
     st.image(logo_path, use_column_width='always')
 
 from st_aggrid import AgGrid, GridOptionsBuilder
