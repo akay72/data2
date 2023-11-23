@@ -65,7 +65,7 @@ with col1:
     st.write("Select the firms you would like to reach out to for an offer? ")
 with col2:    
     # Using multiselect instead of selectbox
-    selected_firm_names = st.multiselect('Select Firm Names', filtered_firm_names, default='All')
+    selected_firm_names = st.multiselect('Select Firm Names', filtered_firm_names)
 
 
 spend_ranges = [
