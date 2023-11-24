@@ -85,7 +85,7 @@ col1, col2 = st.columns([2, 3])
 with col1:
       st.write("What do you, in the best of your experience, will be the expected spend for this matter? ")
 with col2:
-    selected_spend_range = st.selectbox('Select a Spend Range', spend_ranges)
+    selected_spend_range = st.selectbox('Select a Spend Range', spend_ranges ,placeholder="Choose an option",index =None)
 
 cost_objects = [
     "Litigation, General",
@@ -130,11 +130,15 @@ with col1:
     st.write("What cost object will be the costs for this engagement be booked against (cost center / Purchase Order etc.)?  ")
 
 with col2:    
-    selected_cost_object = st.selectbox('Select a Cost Object', cost_objects)
+    selected_cost_object = st.selectbox('Select a Cost Object', cost_objects,placeholder="Choose an option",index =None)
 
 # Optionally display the corresponding cost center if needed
-    selected_cost_center = cost_object_to_center[selected_cost_object]
-    st.write("Selected Cost Center: ", selected_cost_center)
+    if selected_cost_object:  # This will be False if the placeholder is selected
+        selected_cost_center = cost_object_to_center[selected_cost_object]
+        st.write("Selected Cost Center: ", selected_cost_center)
+    else:
+        # If no selection is made, you might want to display nothing or a placeholder message
+        st.write("No Cost Center selected.")
 
 # Function to apply filters only when a specific option is selected
 # Function to apply filters only when a specific option is selected
